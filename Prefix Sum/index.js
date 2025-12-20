@@ -61,30 +61,48 @@ sum.getSum(1, 2); */
 //  More formally, check that the prefix sum of a part of the array is equal to the suffix
 // sum of rest of the arry.
 
-let arr = [5, 3, 2, 6, 3, 1];
-function equalPartionOfSubarrays(arr) {
-  let prefixSum = new Array(arr.length);
-  let suffixSum = new Array(arr.length);
-  for (let i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
-    if (i === 0) {
-      prefixSum[i] = arr[i];
-    } else {
-      prefixSum[i] = arr[i] + prefixSum[i - 1];
-    }
-    if (j === arr.length - 1) {
-      suffixSum[j] = arr[j];
-    } else {
-      suffixSum[j] = arr[j] + suffixSum[j + 1];
-    }
-  }
+// let arr = [5, 3, 2, 6, 3, 1];
+// function equalPartionOfSubarrays(arr) {
+//   let prefixSum = new Array(arr.length);
+//   let suffixSum = new Array(arr.length);
+//   for (let i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
+//     if (i === 0) {
+//       prefixSum[i] = arr[i];
+//     } else {
+//       prefixSum[i] = arr[i] + prefixSum[i - 1];
+//     }
+//     if (j === arr.length - 1) {
+//       suffixSum[j] = arr[j];
+//     } else {
+//       suffixSum[j] = arr[j] + suffixSum[j + 1];
+//     }
+//   }
 
-  console.log(prefixSum);
-  console.log(suffixSum);
+//   console.log(prefixSum);
+//   console.log(suffixSum);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (prefixSum[i] === suffixSum[i + 1]) {
+//       return true;
+//     }
+//   }
+// }
+
+// console.log(equalPartionOfSubarrays(arr));
+
+// same question with another method
+
+let arr = [5, 3, 2, 6, 3, 1];
+
+function equalPartionOfSubarrays2(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    arr[i] = arr[i] + arr[i - 1];
+  }
   for (let i = 0; i < arr.length; i++) {
-    if (prefixSum[i] === suffixSum[i + 1]) {
-      return i;
+    if (arr[i] === arr[arr.length - 1] - arr[i]) {
+      return true;
     }
   }
+  return false;
 }
 
-console.log(equalPartionOfSubarrays(arr));
+console.log(equalPartionOfSubarrays2(arr));

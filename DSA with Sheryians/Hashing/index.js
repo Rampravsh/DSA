@@ -18,13 +18,39 @@
 
 // Q. find the unique value in the given array
 
-let arr = [2,2,43, 43, 5, 45, 45,23,56,3,23, 5, 5, 56, 3];
+// let arr = [2,2,43, 43, 5, 45, 45,23,56,3,23, 5, 5, 56, 3];
 
-let set = new Set();
-for (let i = 0; i < arr.length; i++) {
-  if (set.has(arr[i])) {
-    set.delete(arr[i]);
-  } else set.add(arr[i]);
-}
+// let set = new Set();
+// for (let i = 0; i < arr.length; i++) {
+//   if (set.has(arr[i])) {
+//     set.delete(arr[i]);
+//   } else set.add(arr[i]);
+// }
 
-console.log(set);
+// console.log(set);
+
+// Q A panagram is a sentence wher every letter of the English alphabet appears at least once .
+
+// Given a string sentence containing only lowercase English latters ,
+// return true if sentence is a pangram or false otherwise
+
+let sentence = "thequickbrownfoxjumpsoverthelazydo";
+
+const checkIfPangram = function (sentence) {
+  let set = new Set();
+  for (let i = 0; i < sentence.length; i++) {
+    let code = sentence.charCodeAt(i);
+    set.add(code);
+  }
+  //   for (let i = 97; i <= 122; i++) {
+  //     if (!set.has(i)) {
+  //       return false;
+  //     }
+  //   }
+  if (set.size !== 26) {
+    return false;
+  }
+  return true;
+};
+
+console.log(checkIfPangram(sentence));

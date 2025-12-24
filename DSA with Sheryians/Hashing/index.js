@@ -58,12 +58,38 @@
 // map ke bare me yaha se suru ho raha hai
 // map ko aese hi define karte abhi to yahi pta bad me pta chala to update kar dunga
 
-let map = new Map();
+// let map = new Map();
 
-map.set("name", "rampravesh");
-map.set("age", 19);
-map.set("isPassed", true);
-map.set("contact", [9084237897, 32984798]);
-console.log(map);
+// map.set("name", "rampravesh");
+// map.set("age", 19);
+// map.set("isPassed", true);
+// map.set("contact", [9084237897, 32984798]);
+// console.log(map.has('age'));
+
+// for (let [key, value] of map) {
+//   console.log(key + "=>" + value);
+// }
+
+// for (let key of map.keys()) {
+//   console.log(key);
+// }
+
+// for (let value of map.values()) {
+//   console.log(value);
+// }
 
 // Q. Print the frequency of each number
+
+let arr = [13, 34, 4, 5, 5, 6, 322, 54, 6, 6, 34, 2, 45, 65];
+let map = new Map();
+for (let i = 0; i < arr.length; i++) {
+  //   if (map.has(arr[i])) {
+  //     map.set(arr[i], map.get(arr[i]) + 1);
+  //   } else {
+  //     map.set(arr[i], 1);
+  //   }
+
+  map.set(arr[i], (map.get(arr[i]) || 0) + 1);
+}
+
+console.log(map);

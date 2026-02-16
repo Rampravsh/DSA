@@ -7,5 +7,6 @@ int main() {
     cin>>a>>b>>c;
     cout<<"OR: "<<(a|b|c)<<"\n";
     cout <<"AND: "<<(a&b&c)<<endl;
+    cout <<"XOR: "<<(a^b^c)<<endl;
     return 0;
 }

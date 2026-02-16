@@ -8,7 +8,7 @@ function printNumber(lrange, urange) {
   printNumber(lrange + 1, urange);
 }
 
-// console.log(printNumber(2, 8));
+console.log(printNumber(2, 8));
 
 // Q Print numbers from Urange to lrange using recursion
 

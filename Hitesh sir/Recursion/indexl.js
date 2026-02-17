@@ -39,3 +39,13 @@
 
 // console.log(sum)
 
+// reverse stirng using recrusion 
+
+function revereseString(s){
+  if(s.length<=1){
+    return s
+  }
+  return revereseString(s.slice(1,s.length))+s[0]
+}
+
+console.log(revereseString('hello'))
